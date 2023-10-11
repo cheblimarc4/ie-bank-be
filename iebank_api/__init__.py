@@ -23,7 +23,6 @@ elif os.getenv('ENV') == 'uat':
     app.config.from_object('config.UATConfig')
 
 db = SQLAlchemy(app)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:8080"}})
 from iebank_api.models import Account
 
 with app.app_context():
