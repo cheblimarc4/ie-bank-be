@@ -77,12 +77,12 @@ jobs:
         app-name: ${{ env.BACKEND_WEBAPP_DEV }}
         package: .
   
+    
   deploy-uat:
     runs-on: ubuntu-latest
-    needs: [build, deploy-dev]
-    # if: ${{ pr_target_branch_name == 'refs/heads/main' }} #deploys only on PR to main branch
+    needs: build
     environment:
-      name: 'User Acceptance Testing'
+      name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
