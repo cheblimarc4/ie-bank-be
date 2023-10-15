@@ -3,12 +3,11 @@ from iebank_api.models import Account
 from iebank_api import db, app
 
 
-
 @pytest.fixture
-def testing_client(scope='module'):
+def testing_client(scope="module"):
     with app.app_context():
         db.create_all()
-        account = Account('Test Account', '€', 'Spain')
+        account = Account("Test Account", "Some Country", "€")
         db.session.add(account)
         db.session.commit()
 
