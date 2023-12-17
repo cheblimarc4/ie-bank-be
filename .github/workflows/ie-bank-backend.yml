@@ -2,10 +2,12 @@ name: ie-bank-backend
 
 on:
   push:
+    branches: 
+      - zabre
   pull_request:
     branches: 
       - main
-      - testing
+      - zabre
   workflow_dispatch:
 
 permissions:
