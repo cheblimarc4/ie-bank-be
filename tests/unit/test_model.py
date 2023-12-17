@@ -43,3 +43,11 @@ def test_account_default_country():
     """
     account = Account('John Doe', '€')
     assert account.country == 'Spain'
+def test_account_default_currency():
+    """
+    GIVEN a new Account
+    WHEN a new Account is created
+    THEN check that the default currency is '€'
+    """
+    account = Account('John Doe')
+    assert account.currency == '€'
