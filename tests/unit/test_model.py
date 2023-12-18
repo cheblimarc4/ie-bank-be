@@ -41,5 +41,5 @@ def test_account_default_country():
     WHEN a new Account is created
     THEN check that the default country is 'Spain'
     """
-    account = Account('John Doe', '€')
+    account = Account('John Doe', '€', 'Spain')
     assert account.country == 'Spain'
